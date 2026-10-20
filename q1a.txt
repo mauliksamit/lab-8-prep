@@ -1,0 +1,2 @@
+If x axis is pointing right and y axis is pointing down, increasing theta performs a clockwise rotation.
+If y axis is pointing up, increasing theta performs a counterclockwise rotation.

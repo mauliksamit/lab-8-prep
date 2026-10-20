@@ -1,0 +1,35 @@
+Problem 2a
+
+Top left: (200,150) , (200, 450), (600, 150)
+Bottom right: (200,450) , (600, 450), (600, 150)
+
+--------------------------
+Problem 2b
+
+We can store 4 unique vertex positions in a vertex buffer and an index buffer to reference them.
+Example: Top left: 0,  Bottom Left: 1, Top right: 2, Bottom Right: 3 
+
+Index buffer: [0, 1,2, 1,3,2] for the two triangles (4 bytes per index)
+
+Using floats, each coord pair needs 8 bytes:
+Total memory needed in 2a: 6*8 = 48 bytes
+Total memory needed in indexed approach: 4*8 + 6*4 = 56 bytes
+Default approach is better
+
+Using doubles, each coord pair needs 16 bytes:
+Total memory needed in 2a: 6*16 = 96 bytes
+Total memory needed in indexed approach: 4*16 + 6*4 = 88 bytes
+Indexed approach is better.
+
+Generally, indexing becomes more memory efficient when vertices are shared by multiple traiangles as it helps avoid storing duplicate data.
+So when using doubles, indexed approach uses less memory, but for floats, default approach uses less memory for this quad (made of two triangles).
+To save memeory using indexing with floats, more than two traingles need to share a vertex.
+
+
+---------------------
+Problem 2c
+
+Normalized coords x = (500-200)/(600-200) = 0.75
+Normalized coords y = (301-150)/(450-150) = 0.5034
+
+UV coords are 0.75, 0.5034
